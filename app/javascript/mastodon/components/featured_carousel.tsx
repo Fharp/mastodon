@@ -139,7 +139,7 @@ export const FeaturedCarousel: React.FC<{
             values={{ count: pinnedStatuses.size }}
           />
         </h4>
-        {pinnedStatuses.size > 1 && (
+        {false && pinnedStatuses.size > 1 && (
           <>
             <IconButton
               title={intl.formatMessage(messages.previous)}
@@ -165,27 +165,17 @@ export const FeaturedCarousel: React.FC<{
           </>
         )}
       </div>
-      <animated.div
-        className='featured-carousel__slides'
-        ref={wrapperRef}
-        style={wrapperStyles}
-        aria-atomic='false'
-        aria-live='polite'
+      <div  className='featured-carousel__list'
       >
-        {pinnedStatuses.map((statusId, index) => (
-          <FeaturedCarouselItem
-            key={`f-${statusId}`}
-            data-index={index}
-            aria-label={intl.formatMessage(messages.slide, {
-              index: index + 1,
-              total: pinnedStatuses.size,
-            })}
-            statusId={statusId}
-            observer={observerRef.current}
-            active={index === slideIndex}
+     {pinnedStatuses.map(statusId => (
+    <StatusQuoteManager
+      key={`f-${statusId}`}
+      id={statusId}
+      contextType='account'
+      withCounters
           />
         ))}
-      </animated.div>
+     </div>
     </div>
   );
 };
