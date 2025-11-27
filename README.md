@@ -1,3 +1,16 @@
+## Custom Notes
+
+This project is based on Mastodon v4.2.10.  
+This build is used for https://sleep.etoile.ink/
+
+## Custom Modifications
+
+- Disabled the carousel for pinned posts and restored the legacy sequential pinned-post layout.
+
+---
+
+Follows the original README
+
 > [!NOTE]
 > Want to learn more about Mastodon?
 > Click below to find out more in a video.
